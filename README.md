@@ -77,15 +77,15 @@ Things you may want to cover:
 
 ## addressers テーブル
 
-| Column          | Type       | Options                        |
-| --------------- | ---------- | ------------------------------ |
-| post_code       | string     | null: false                    |
-| prefecyural     | references | null: false                    |
-| municipality    | string     | null: false                    |
-| address         | string     | null: false                    |
-| building_name   | string     | null: false                    |
-| phone_number    | integer    | null: false                    |
-| orders          | references | null: false, foreign_key: true |
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| post_code          | string     | null: false                    |
+| shipping_origin_id | integer    | null: false                    |
+| municipality       | string     | null: false                    |
+| address            | string     | null: false                    |
+| building_name      | string     | null: false                    |
+| phone_number       | integer    | null: false                    |
+| orders             | references | null: false, foreign_key: true |
 
 ### Association
 
