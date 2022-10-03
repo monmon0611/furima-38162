@@ -45,8 +45,8 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column            | Type       | Options                       |
-| ------------------| ---------- | ----------------------------- |
+| Column            | Type       | Options                         |
+| ------------------ | ----------- | ----------------------------- |
 | title              | string      | null: false                   |
 | explanation        | text        | null: false                   |    
 | category_id        | integer     | null: false                   |
@@ -83,7 +83,7 @@ Things you may want to cover:
 | shipping_origin_id | integer    | null: false                    |
 | municipality       | string     | null: false                    |
 | address            | string     | null: false                    |
-| building_name      | string     | null: false                    |
+| building_name      | string     |                                |
 | phone_number       | integer    | null: false                    |
 | orders             | references | null: false, foreign_key: true |
 
