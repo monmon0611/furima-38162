@@ -54,7 +54,7 @@ Things you may want to cover:
 | load            | string     | null: false                   |
 | shipping_origin | string     | null: false                   |    
 | number_of_day   | syring     | null: false                   |
-| price           | string     | null: false                   |
+| price           | integer    | null: false                   |
 | user            | references | null: false,foreign_key: true |
 
 ### Association
