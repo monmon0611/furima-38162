@@ -59,7 +59,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :users
+- belongs_to :user
 - has_many :orders
 
 ## orders テーブル
