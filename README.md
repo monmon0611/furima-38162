@@ -60,7 +60,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :order
+- has_one    :order
 
 ## orders テーブル
 
@@ -89,4 +89,4 @@ Things you may want to cover:
 
 ### Association
 
-- has_one :order
+- belongs_to :order
