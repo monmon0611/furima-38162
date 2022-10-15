@@ -13,31 +13,19 @@ RSpec.describe User, type: :model do
     end
     # ユーザー新規登録についてのテストコードを記述します  
     it 'nicknameが空では登録できない' do
-      @user.nickname = ''  # nicknameの値を空にする
+      @user.nickname = ""  # nicknameの値を空にする
       @user.valid?
       expect(@user.errors.full_messages).to include("Nickname can't be blank")
       # nicknameが空では登録できないテストコードを記述します
     end
 
     it 'emailが空では登録できない' do
-      @user.email = ''  # emailの値を空にする
+      @user.email = ""  # emailの値を空にする
       @user.valid?
       expect(@user.errors.full_messages).to include("Email can't be blank")
       # emailが空では登録できないテストコードを記述します
     end
 
-    it 'nicknameが空では登録できない' do
-      @user.nickname = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Nickname can't be blank")
-    end
-      
-
-    it 'emailが空では登録できない' do
-      @user.email = ""
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Email can't be blank") 
-    end
 
     it '重複したemailが存在する場合は登録できない' do
       @user.save
@@ -75,6 +63,12 @@ RSpec.describe User, type: :model do
       @user.password = "ああああああ"
       @user.valid?
       expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+    end
+
+    it 'passwordが6文字以上でないと登録できない' do
+      @user.password = '12345'
+      @user.valid?
+      expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
     end
 
 
@@ -145,12 +139,6 @@ RSpec.describe User, type: :model do
       @user.date_of_birth = ""
       @user.valid?
       expect(@user.errors.full_messages).to include("Date of birth can't be blank")
-    end
-
-    it 'nicknameが7文字以上では登録できない' do
-      @user.nickname = 'aaaaaaa'
-      @user.valid?
-      expect(@user.errors.full_messages).to include
     end
 end
 
