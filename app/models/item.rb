@@ -27,7 +27,7 @@ class Item < ApplicationRecord
   # size: { less_than_or_equal_to: 1.megabytes },
   # dimension: { width: { max: 2000 }, height: { max: 2000 }}
 
-  validates :title,              presence: true, length: { maximum: 40 }
-  validates :explanation,        presence: true, length: { maximum: 1000 }
+  validates :title,               length: { maximum: 40 }
+  validates :explanation,         length: { maximum: 1000 }
   validates :price,              presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
 end
