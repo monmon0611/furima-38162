@@ -50,7 +50,7 @@ RSpec.describe OrderAddress, type: :model do
       it '都道府県はid1は保存できない' do
         @order_address.shipping_origin_id = "1"
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include()
+        expect(@order_address.errors.full_messages).to include("Shipping origin must be other than 1")
       end
 
       it "市町村が空では保存できない" do
@@ -79,6 +79,12 @@ RSpec.describe OrderAddress, type: :model do
 
       it "電話番号が12桁以上では保存ができない" do
         @order_address.phone_number = "111111111111"
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Phone number is invalid")
+      end
+
+      it "電話番号が半角数字以外では登録できない" do
+        @order_address.phone_number = "aaa11111111"
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number is invalid")
       end

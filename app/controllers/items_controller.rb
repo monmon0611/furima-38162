@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
   end
 
   def item_set
-    if current_user.id != @item.user_id
+    if current_user.id != @item.user_id || @item.order.present?
       redirect_to action: :index
     end
   end
