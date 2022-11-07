@@ -19,7 +19,7 @@ class OrderAddress
   end
 
   def save
-    # 寄付情報を保存
+    # 購入情報を保存
     order = Order.create(user_id: user_id, item_id: item_id)
     # 住所を保存する
     # order_idには、変数orderのidと指定する
