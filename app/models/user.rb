@@ -5,6 +5,8 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
 
 has_many :items
+has_many :orders
+
 
 KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/
 VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i

@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   belongs_to :number_of_day
   
   belongs_to :user
+  has_one    :order
   validates :title, :explanation, presence: true
 
   with_options numericality: { other_than: 1 , message: "can't be blank"} do
